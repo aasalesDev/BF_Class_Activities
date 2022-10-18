@@ -26,9 +26,5 @@ class GreenViewController: UIViewController {
         
         navigationController?.pushViewController(myVC ?? UIViewController(), animated: true)
     }
-    
-    
-   
-    
 }
 
