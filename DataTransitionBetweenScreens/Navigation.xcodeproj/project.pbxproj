@@ -19,6 +19,7 @@
 		6C6334A828F08A4900C60A92 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6334A728F08A4900C60A92 /* BlueViewController.swift */; };
 		6C6334AA28F08A5900C60A92 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6334A928F08A5900C60A92 /* RedViewController.swift */; };
 		6C6334AC28F08A6900C60A92 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6334AB28F08A6900C60A92 /* YellowViewController.swift */; };
+		6C8E74C428FF946A008DDFE1 /* MyStructFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8E74C328FF946A008DDFE1 /* MyStructFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		6C6334A728F08A4900C60A92 /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
 		6C6334A928F08A5900C60A92 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
 		6C6334AB28F08A6900C60A92 /* YellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = "<group>"; };
+		6C8E74C328FF946A008DDFE1 /* MyStructFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStructFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				6C6334A928F08A5900C60A92 /* RedViewController.swift */,
 				6C6334AB28F08A6900C60A92 /* YellowViewController.swift */,
 				6C63349128F0888700C60A92 /* ViewController.swift */,
+				6C8E74C328FF946A008DDFE1 /* MyStructFile.swift */,
 				6C63349328F0888700C60A92 /* Main.storyboard */,
 				6C6334A128F08A0C00C60A92 /* Red.storyboard */,
 				6C6334A328F08A1A00C60A92 /* Blue.storyboard */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C8E74C428FF946A008DDFE1 /* MyStructFile.swift in Sources */,
 				6C6334AA28F08A5900C60A92 /* RedViewController.swift in Sources */,
 				6C63349228F0888700C60A92 /* ViewController.swift in Sources */,
 				6C63348E28F0888700C60A92 /* AppDelegate.swift in Sources */,
