@@ -11,10 +11,10 @@ class Screen03ViewController: UIViewController {
     
     var sentence: String = ""
     
-    @IBOutlet weak var screen03SentenceLabel: UILabel!
+    @IBOutlet weak var screen03TextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        screen03SentenceLabel.text = "Displaying '\(sentence)' in \(Screen03ViewController.self)!"
+        screen03TextView.text = "Displaying '\(sentence)' in \(Screen03ViewController.self)!"
     }
 }
