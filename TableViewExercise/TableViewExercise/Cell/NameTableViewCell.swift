@@ -15,6 +15,8 @@ class NameTableViewCell: UITableViewCell {
      3 - Add indentifier to the XIB
      4 - Create NIB method
      5 - Create elements and link them
+     6 - Configure elements
+     7 - Create setup method
      */
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -30,6 +32,9 @@ class NameTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+    }
+    
+    func setupCell(name: String){
+        nameLabel.text = name
     }
 }
