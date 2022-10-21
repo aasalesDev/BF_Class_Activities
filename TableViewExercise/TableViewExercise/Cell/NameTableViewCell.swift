@@ -11,7 +11,7 @@ class NameTableViewCell: UITableViewCell {
     
     /*
      1 - Create cell
-     2 - create identifier
+     2 - create static identifier
      3 - Add indentifier to the XIB
      4 - Create NIB method
      5 - Create elements and link them
