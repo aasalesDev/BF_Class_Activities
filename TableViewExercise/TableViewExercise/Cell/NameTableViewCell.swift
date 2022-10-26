@@ -26,7 +26,6 @@ class NameTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-    
 
     // Cell life cycle (like the viewDidLoad())
     override func awakeFromNib() {
