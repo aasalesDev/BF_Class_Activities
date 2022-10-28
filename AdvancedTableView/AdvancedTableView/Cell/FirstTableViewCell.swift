@@ -13,7 +13,6 @@ class FirstTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     static let identifier: String = "FirstTableViewCell"
-    var person: SimplePerson? = nil
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
@@ -31,7 +30,7 @@ class FirstTableViewCell: UITableViewCell {
     }
     
     func setupCell(name: String, image: UIImage){
-        person?.name = nameLabel.text ?? ""
-        person?.image = photoImageView.image ?? UIImage()
+        nameLabel.text = name
+        photoImageView.image = image
     }
 }

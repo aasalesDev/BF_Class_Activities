@@ -21,7 +21,6 @@ class SecondTableViewCell: UITableViewCell {
     @IBOutlet weak var salaryTextField: UITextField!
     
     static let identifier: String = "SecondTableViewCell"
-    var person: ComplexPerson? = nil
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
@@ -39,11 +38,11 @@ class SecondTableViewCell: UITableViewCell {
     }
     
     func setupCell(name: String, age: Int, profession: String, salary: String, imageUser: UIImage, isEnableHeart: Bool){
-        person?.name = nameTextField.text ?? ""
-        person?.age = Int(ageLabel.text ?? "") ?? 0
-        person?.profession = professionTextField.text ?? ""
-        person?.imageUser = photoImageView.image ?? UIImage()
-        person?.isEnableHeart = false
+        nameTextField.text = name
+        ageTextField.text = String(age)
+        professionTextField.text = profession
+        salaryTextField.text = salary
+        photoImageView.image = imageUser
+        likeButton.titleLabel?.text = "Like"
     }
-    
 }
