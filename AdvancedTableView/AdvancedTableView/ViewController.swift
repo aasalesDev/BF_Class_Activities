@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     
     var secondPerson = [
         ComplexPerson(name: "Anderson Sales", age: 38, profession: "Engineer", salary: "No money", imageUser: UIImage(named: "noImage") ?? UIImage(), isEnableHeart: false),
-        ComplexPerson(name: "Anderson Sales", age: 38, profession: "Engineer", salary: "No money", imageUser: UIImage(named: "noImage") ?? UIImage(), isEnableHeart: false),
-        ComplexPerson(name: "Anderson Sales", age: 38, profession: "Engineer", salary: "No money", imageUser: UIImage(named: "noImage") ?? UIImage(), isEnableHeart: false)
+        ComplexPerson(name: "Billy Sales", age: 38, profession: "Dog", salary: "Some money", imageUser: UIImage(named: "noImage") ?? UIImage(), isEnableHeart: false),
+        ComplexPerson(name: "Gabrielle Sales", age: 38, profession: "Student", salary: "Lot of money", imageUser: UIImage(named: "noImage") ?? UIImage(), isEnableHeart: false)
     ]
     
     override func viewDidLoad() {
@@ -46,13 +46,13 @@ extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: FirstTableViewCell.identifier) as? FirstTableViewCell {
-                cell.setupCell(name: firstPerson[indexPath.row].name, image: firstPerson[indexPath.row].image)
+                cell.setupCell(person: firstPerson[indexPath.row])
                 return cell
             }
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: SecondTableViewCell.identifier) as? SecondTableViewCell {
-            cell.setupCell(name: secondPerson[indexPath.row - 1].name, age: secondPerson[indexPath.row - 1].age, profession: secondPerson[indexPath.row - 1].profession, salary: secondPerson[indexPath.row - 1].salary, imageUser: secondPerson[indexPath.row - 1].imageUser, isEnableHeart: false)
+            cell.setupCell(person: secondPerson[indexPath.row - 1])
             return cell
         }
         return UITableViewCell()
@@ -62,6 +62,6 @@ extension ViewController: UITableViewDataSource{
         if indexPath.row == 0 {
             return 125
         }
-        return 200
+        return 210
     }
 }

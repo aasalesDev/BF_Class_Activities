@@ -37,12 +37,12 @@ class SecondTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(name: String, age: Int, profession: String, salary: String, imageUser: UIImage, isEnableHeart: Bool){
-        nameTextField.text = name
-        ageTextField.text = String(age)
-        professionTextField.text = profession
-        salaryTextField.text = salary
-        photoImageView.image = imageUser
+    func setupCell(person: ComplexPerson){
+        nameTextField.text = person.name
+        ageTextField.text = String(person.age)
+        professionTextField.text = person.profession
+        salaryTextField.text = person.salary
+        photoImageView.image = person.imageUser
         likeButton.titleLabel?.text = "Like"
     }
 }

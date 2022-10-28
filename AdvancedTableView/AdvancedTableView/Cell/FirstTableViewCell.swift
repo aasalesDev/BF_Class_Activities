@@ -29,8 +29,8 @@ class FirstTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(name: String, image: UIImage){
-        nameLabel.text = name
-        photoImageView.image = image
+    func setupCell(person: SimplePerson){
+        nameLabel.text = person.name
+        photoImageView.image = person.image
     }
 }
