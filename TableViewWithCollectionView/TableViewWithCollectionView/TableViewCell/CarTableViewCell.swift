@@ -55,8 +55,16 @@ extension CarTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(CarTableViewCell.data[indexPath.row])
+        
+        /*let storyboard = UIStoryboard(name: "DetailViewController", bundle: nil)
         let navigationController = UINavigationController()
+           let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+           //controller.selectedIndex = indexPath.row //pass selected cell index to next view.
+           navigationController.pushViewController(controller, animated: true)*/
+        
+        /*let navigationController = UINavigationController()
         let vc = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        navigationController.pushViewController(vc ?? DetailViewController(), animated: true)
+        navigationController.pushViewController(vc ?? DetailViewController(), animated: true)*/
     }
 }
