@@ -27,7 +27,6 @@ class ViewController: UIViewController {
             layout.estimatedItemSize = .zero
         }
     }
-        
 }
 
 extension ViewController: UICollectionViewDelegate {
