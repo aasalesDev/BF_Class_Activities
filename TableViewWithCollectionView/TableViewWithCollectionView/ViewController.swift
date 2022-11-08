@@ -39,5 +39,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        vc?.configureImageView(name: CarTableViewCell.data[indexPath.row])
+        navigationController?.pushViewController(vc ?? DetailViewController(), animated: true)
+    }
 }
 
