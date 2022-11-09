@@ -19,11 +19,10 @@ class CarCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
-    func configureCollectionViewCell(name: String){
-        imageView.image = UIImage(named: name)
+    func configureCollectionViewCell(vehicle: String){
+        imageView.image = UIImage(named: vehicle)
     }
 
 }

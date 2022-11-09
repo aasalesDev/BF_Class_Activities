@@ -13,7 +13,8 @@ class CarTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     static let identifier: String = "CarTableViewCell"
-    static var data: [String] = ["car1", "car2", "car3", "car4", "car5", "car6"]
+    //static var data: [String] = ["car1", "car2", "car3", "car4", "car5", "car6"]
+    var vehicles: [String] = []
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
@@ -34,28 +35,29 @@ class CarTableViewCell: UITableViewCell {
         }
     }
     
-    func setupCell(name: String){
+    func setupCell(name: String, vehicles: [String]){
         titleLabel.text = name
+        self.vehicles = vehicles
     }
 }
 
-extension CarTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CarTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return CarTableViewCell.data.count
+        return vehicles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarCollectionViewCell.identifier, for: indexPath) as? CarCollectionViewCell
-        cell?.configureCollectionViewCell(name: CarTableViewCell.data[indexPath.row])
+        cell?.configureCollectionViewCell(vehicle: vehicles[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 300.00)
+        return CGSize(width: collectionView.frame.width, height: 280.00)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(CarTableViewCell.data[indexPath.row])
+        //print(CarTableViewCell.data[indexPath.row])
         
         /*let storyboard = UIStoryboard(name: "DetailViewController", bundle: nil)
         let navigationController = UINavigationController()

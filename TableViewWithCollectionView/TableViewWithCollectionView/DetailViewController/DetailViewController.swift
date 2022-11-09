@@ -11,11 +11,10 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var name: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func configureImageView(name: String){
-        print(name)
+        imageView.image = UIImage(named: name ?? "car6")
     }
 }
