@@ -15,8 +15,15 @@ class ViewController: UIViewController {
     //var cars: [String] = ["car1", "car2", "car3", "car4", "car5", "car6"]
     //var bikes: [String] = ["moto1", "moto2", "moto3", "moto4", "moto5", "moto6"]
     
-    var data: [[String]] = [["Sports Cars", "Speed Bikes"], ["car1", "car2", "car3", "car4", "car5", "car6"], ["moto1", "moto2", "moto3", "moto4", "moto5", "moto6"]]
+    //var data: [[String]] = [["Sports Cars", "Speed Bikes"], ["car1", "car2", "car3", "car4", "car5", "car6"], ["moto1", "moto2", "moto3", "moto4", "moto5", "moto6"]]
     
+    //var cars: Vehicle = Vehicle(vehicles: ["car1", "car2", "car3", "car4", "car5", "car6"], title: "Sports Cars")
+    //var bikes: Vehicle = Vehicle(vehicles: ["moto1", "moto2", "moto3", "moto4", "moto5", "moto6"], title: "Speed Bikes")
+    
+    var vehicles: [Vehicle] = [
+        Vehicle(vehicles: ["car1", "car2", "car3", "car4", "car5", "car6"], title: "Sports Cars", isHorizontal: true),
+        Vehicle(vehicles: ["moto1", "moto2", "moto3", "moto4", "moto5", "moto6"], title: "Speed Bikes", isHorizontal: false)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +39,17 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count - 1
+        return vehicles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CarTableViewCell.identifier, for: indexPath) as? CarTableViewCell
         if indexPath.row == 0 {
-            cell?.setupCell(name: data[indexPath.row][indexPath.row], vehicles: data[indexPath.row+1])
+            //cell?.setupCell(vehicles: vehicles[indexPath.row].vehicles, title: vehicles[indexPath.row].title, isHorizontal: vehicles[indexPath.row].isHorizontal)
+            cell?.setupCell(vehicles: vehicles[indexPath.row])
         } else {
-            cell?.setupCell(name: data[indexPath.row-1][indexPath.row], vehicles: data[indexPath.row+1])
+            //cell?.setupCell(vehicles: vehicles[indexPath.row].vehicles, title: vehicles[indexPath.row].title, isHorizontal: vehicles[indexPath.row].isHorizontal)
+            cell?.setupCell(vehicles: vehicles[indexPath.row])
         }
         return cell ?? UITableViewCell()
     }
@@ -51,7 +60,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        vc?.name = data[indexPath.row+1][indexPath.row]
+        vc?.customTitle = vehicles[indexPath.row].title
+        vc?.vehicleName = vehicles[indexPath.row].vehicles?[indexPath.row+1]
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 }
