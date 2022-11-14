@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     private func configureTabBarItems() {
         guard let items = tabBarVC.tabBar.items else { return }
-        var images = ["house", "bell", "star", "gear"]
+        let images = ["house", "bell", "star", "gear"]
         for index in 0..<items.count {
             items[index].badgeValue = String(index+1)
             items[index].image = UIImage(systemName: images[index])

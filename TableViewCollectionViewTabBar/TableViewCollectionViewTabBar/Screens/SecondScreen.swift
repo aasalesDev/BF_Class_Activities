@@ -13,7 +13,6 @@ class SecondScreen: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         configureScreen()
     }
     

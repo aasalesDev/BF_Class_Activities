@@ -13,7 +13,6 @@ class ThirdScreen: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureScreen()
     }
     
@@ -21,5 +20,4 @@ class ThirdScreen: UITabBarController {
         view.backgroundColor = .yellow
         title = ThirdScreen.identifier
     }
-
 }

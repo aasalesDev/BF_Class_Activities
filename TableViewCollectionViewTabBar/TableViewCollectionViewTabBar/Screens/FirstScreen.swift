@@ -14,10 +14,8 @@ class FirstScreen: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureScreen()
         configureTableView()
-        
     }
     
     private func configureScreen() {
@@ -29,8 +27,8 @@ class FirstScreen: UITabBarController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.reloadData()
     }
-
 }
 
 extension FirstScreen: UITableViewDelegate, UITableViewDataSource {
@@ -39,7 +37,7 @@ extension FirstScreen: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell
         cell?.setupCell(imageName: "person")
         return cell ?? UITableViewCell()
     }
@@ -47,5 +45,4 @@ extension FirstScreen: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 150
     }
-    
 }
