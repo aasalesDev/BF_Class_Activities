@@ -20,7 +20,6 @@ class DetailTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setupCell(user: User?){

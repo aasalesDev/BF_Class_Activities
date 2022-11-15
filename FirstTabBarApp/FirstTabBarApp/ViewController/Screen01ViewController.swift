@@ -15,7 +15,6 @@ class Screen01ViewController: UIViewController {
     
     var users: [User] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
