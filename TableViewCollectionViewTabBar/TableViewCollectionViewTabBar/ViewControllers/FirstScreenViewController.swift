@@ -9,7 +9,6 @@ import UIKit
 
 class FirstScreenViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tabBarTableView: UITableView!
     static let identifier = "FirstScreen"
 

@@ -16,7 +16,12 @@ class Screen01ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configView()
+    }
+    
+    private func configView(){
         screen01ImageView.image = UIImage(systemName: image ?? "noImage")
         title = image
+        view.backgroundColor = .systemYellow
     }
 }
